@@ -54,7 +54,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   }
 
   if (!animated) {
-    return <Image {...imageProps} />
+    return <Image {...imageProps} alt={alt} />
   }
 
   return (
@@ -63,7 +63,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       whileHover={{ scale: hoverScale }}
       transition={{ duration: 0.3, ease: 'easeOut' }}
     >
-      <Image {...imageProps} />
+      <Image {...imageProps} alt={alt} />
     </motion.div>
   )
 }

@@ -63,7 +63,7 @@ const Testimonials = () => {
   useEffect(() => {
     const interval = setInterval(nextTestimonial, 5000)
     return () => clearInterval(interval)
-  }, [])
+  }, [nextTestimonial])
 
   const containerVariants = {
     hidden: { opacity: 0 },
