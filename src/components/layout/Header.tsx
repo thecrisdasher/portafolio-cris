@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import Link from 'next/link'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -36,59 +37,81 @@ const Header = () => {
   }
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-gray-900/95 backdrop-blur-sm py-4 shadow-lg'
-          : 'bg-transparent py-6'
-      }`}
-    >
-      <div className="container-custom flex justify-between items-center">
-        {/* Logo */}
-        <motion.a
-          href="#hero"
-          onClick={(e) => {
-            e.preventDefault()
-            scrollToSection('#hero')
-          }}
-          className="text-2xl font-bold gradient-text cursor-pointer"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Mejor Llama A Cris!
-        </motion.a>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
-          {navItems.map((item, index) => (
-            <motion.a
-              key={item.href}
-              href={item.href}
-              onClick={(e) => {
-                e.preventDefault()
-                scrollToSection(item.href)
-              }}
-              className="text-white hover:text-primary-500 transition-colors duration-300 cursor-pointer"
+    <header className="fixed w-full top-0 z-50 bg-transparent">
+      <div className="container-custom py-4">
+        <div className="flex items-center justify-between">
+          <Link href="/" className="logo-container relative group">
+            <motion.h1 
+              className="text-2xl md:text-3xl font-bold"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -2 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.05 }}
             >
-              {item.label}
-            </motion.a>
-          ))}
-        </nav>
+              <span className="inline-block">
+                <motion.span 
+                  className="text-white hover:text-primary-500 transition-colors duration-300"
+                  whileHover={{ y: -2 }}
+                >
+                  Mejor{' '}
+                </motion.span>
+                <motion.span 
+                  className="text-gradient hover:text-primary-500 transition-colors duration-300"
+                  whileHover={{ y: -2 }}
+                >
+                  Llama{' '}
+                </motion.span>
+                <motion.span 
+                  className="text-white hover:text-primary-500 transition-colors duration-300"
+                  whileHover={{ y: -2 }}
+                >
+                  A{' '}
+                </motion.span>
+                <motion.span 
+                  className="text-gradient hover:text-primary-500 transition-colors duration-300"
+                  whileHover={{ y: -2 }}
+                >
+                  Cris
+                </motion.span>
+                <motion.span 
+                  className="text-gradient hover:text-primary-500 transition-colors duration-300"
+                  whileHover={{ scale: 1.2, rotate: 10 }}
+                >
+                  !
+                </motion.span>
+              </span>
+            </motion.h1>
+          </Link>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-white"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-8">
+            {navItems.map((item, index) => (
+              <motion.a
+                key={item.href}
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollToSection(item.href)
+                }}
+                className="text-white/90 hover:text-primary-500 transition-colors duration-300 cursor-pointer"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -2 }}
+              >
+                {item.label}
+              </motion.a>
+            ))}
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-white/90"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
@@ -97,7 +120,7 @@ const Header = () => {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-gray-900/95 backdrop-blur-sm"
+          className="md:hidden bg-gray-900/80 backdrop-blur-sm"
         >
           <nav className="container-custom py-4 space-y-4">
             {navItems.map((item) => (
@@ -108,7 +131,7 @@ const Header = () => {
                   e.preventDefault()
                   scrollToSection(item.href)
                 }}
-                className="block text-white hover:text-primary-500 transition-colors duration-300 cursor-pointer"
+                className="block text-white/90 hover:text-primary-500 transition-colors duration-300 cursor-pointer"
               >
                 {item.label}
               </a>
@@ -116,7 +139,24 @@ const Header = () => {
           </nav>
         </motion.div>
       )}
-    </motion.header>
+
+      <style jsx global>{`
+        .text-gradient {
+          background: linear-gradient(to right, #60A5FA, #3B82F6);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+        }
+
+        .logo-container:hover .text-gradient {
+          background: linear-gradient(to right, #93C5FD, #60A5FA);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          transition: all 0.3s ease;
+        }
+      `}</style>
+    </header>
   )
 }
 

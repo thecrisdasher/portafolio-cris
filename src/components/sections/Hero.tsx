@@ -92,59 +92,39 @@ const Hero = () => {
               {/* Enhanced Background Effects */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <motion.div
-                  className="w-[420px] h-[420px] md:w-[500px] md:h-[500px] rounded-full"
-                  style={{
-                    background: `
-                      radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.4) 0%, transparent 50%),
-                      radial-gradient(circle at 70% 70%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
-                      conic-gradient(from 0deg, rgba(59, 130, 246, 0.2), rgba(99, 102, 241, 0.2), rgba(59, 130, 246, 0.2))
-                    `,
-                    filter: 'blur(40px)'
-                  }}
+                  className="w-[420px] h-[420px] md:w-[500px] md:h-[500px] rounded-full bg-gradient-radial"
                   animate={{ 
-                    rotate: [0, 360],
-                    scale: [1, 1.1, 1]
+                    scale: [1, 1.1, 1],
+                    rotate: 360
                   }}
                   transition={{ 
                     duration: 20, 
                     repeat: Infinity,
-                    ease: "linear"
+                    ease: "linear",
+                    times: [0, 0.5, 1]
                   }}
-                ></motion.div>
+                />
               </div>
 
-              {/* Main image container - Larger and more prominent */}
+              {/* Main image container */}
               <motion.div
-                className="relative z-10 w-80 h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] rounded-full overflow-hidden shadow-2xl"
-                style={{
-                  border: '4px solid transparent',
-                  backgroundImage: 'linear-gradient(45deg, #3B82F6, #6366F1, #3B82F6)',
-                  backgroundClip: 'border-box',
-                }}
+                className="relative z-10 w-80 h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] rounded-full overflow-hidden shadow-2xl border-gradient"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.4 }}
               >
-                {/* Inner border for the image */}
                 <div className="w-full h-full rounded-full overflow-hidden relative"
                      style={{ margin: '4px', width: 'calc(100% - 8px)', height: 'calc(100% - 8px)' }}>
                   <Image
-                    src="/Image/cristian-carabali-img.png"
+                    src="/Image/cristian-carabali-img.png?v=2024"
                     alt="Cristian Carabali - Desarrollador Full Stack"
                     width={1000}
                     height={1000}
-                    quality={100}
+                    quality={90}
                     className="w-full h-full object-cover object-center"
                     priority
-                    placeholder="blur"
-                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                    loading="eager"
                     sizes="(max-width: 768px) 320px, (max-width: 1024px) 384px, 420px"
                   />
-                  
-                  {/* Enhanced overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 via-transparent to-transparent"></div>
-                  
-                  {/* Subtle glow effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 via-transparent to-secondary-500/20 mix-blend-overlay"></div>
                 </div>
               </motion.div>
 
@@ -215,14 +195,14 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="lg:col-span-7 space-y-8 text-center lg:text-left order-1 lg:order-2 flex flex-col justify-center"
+            className="lg:col-span-7 space-y-4 text-center lg:text-left order-1 lg:order-2 flex flex-col justify-center pt-16 lg:pt-0 mt-8"
           >
             {/* Greeting */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-lg md:text-xl text-gray-300 -mb-2"
+              className="text-lg md:text-xl text-gray-300 mb-0"
             >
               Hola, Soy
             </motion.p>
@@ -231,11 +211,39 @@ const Hero = () => {
             <motion.h1
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6"
+              transition={{ 
+                duration: 0.8, 
+                delay: 0.7,
+                type: "spring",
+                stiffness: 100,
+                damping: 10
+              }}
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 mt-0 relative select-none"
             >
-              Cristian{' '}
-              <span className="gradient-text">Carabali</span>
+              <motion.span
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 1 }}
+                className="text-white"
+              >
+                Cristian{' '}
+              </motion.span>
+              <motion.div 
+                className="inline-block relative"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 1.2 }}
+              >
+                <motion.span 
+                  className="inline-block text-blue-500 animate-gradient"
+                  whileHover={{ 
+                    scale: 1.05,
+                    transition: { duration: 0.2 }
+                  }}
+                >
+                  Carabali,
+                </motion.span>
+              </motion.div>
             </motion.h1>
 
             {/* Animated Role */}
@@ -317,11 +325,11 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 2 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-2 left-1/2 transform -translate-x-1/2 mt-36"
         >
           <motion.button
             onClick={scrollToAbout}
-            className="text-white hover:text-primary-500 transition-colors duration-300"
+            className="text-white/50 hover:text-primary-500 transition-colors duration-300"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
@@ -329,6 +337,59 @@ const Hero = () => {
           </motion.button>
         </motion.div>
       </div>
+
+      <style jsx global>{`
+        .animate-gradient {
+          background: linear-gradient(
+            to right,
+            #3B82F6,
+            #60A5FA,
+            #93C5FD,
+            #60A5FA,
+            #3B82F6
+          );
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          background-size: 200% auto;
+          animation: gradient 3s linear infinite;
+        }
+
+        @keyframes gradient {
+          0% {
+            background-position: 0% center;
+          }
+          100% {
+            background-position: 200% center;
+          }
+        }
+
+        .bg-gradient-radial {
+          background: radial-gradient(circle at 30% 30%, rgba(59, 130, 246, 0.4) 0%, transparent 50%),
+                      radial-gradient(circle at 70% 70%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
+                      conic-gradient(from 0deg, rgba(59, 130, 246, 0.2), rgba(99, 102, 241, 0.2), rgba(59, 130, 246, 0.2));
+          filter: blur(40px);
+          opacity: 0.8;
+          will-change: transform;
+        }
+
+        .border-gradient {
+          position: relative;
+          background: linear-gradient(45deg, #3B82F6, #6366F1, #3B82F6);
+          padding: 4px;
+          will-change: transform;
+        }
+
+        .border-gradient::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: inherit;
+          filter: blur(10px);
+          opacity: 0.7;
+          z-index: -1;
+        }
+      `}</style>
     </section>
   )
 }
