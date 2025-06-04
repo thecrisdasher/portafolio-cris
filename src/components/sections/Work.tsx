@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { ExternalLink, Github, Eye } from 'lucide-react'
+import { ExternalLink, Github } from 'lucide-react'
 
 const Work = () => {
   const ref = useRef(null)
@@ -138,7 +138,7 @@ const Work = () => {
           animate={isInView ? "visible" : "hidden"}
           className="grid md:grid-cols-2 lg:grid-cols-2 gap-8"
         >
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project, _index) => (
             <motion.div
               key={project.id}
               variants={itemVariants}
@@ -204,7 +204,7 @@ const Work = () => {
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, techIndex) => (
+                  {project.technologies.map((tech, _techIndex) => (
                     <span
                       key={tech}
                       className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm"

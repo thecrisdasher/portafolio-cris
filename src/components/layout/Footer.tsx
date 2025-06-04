@@ -114,7 +114,7 @@ const Footer = () => {
             >
               <h4 className="text-lg font-semibold text-white mb-6">Enlaces Rápidos</h4>
               <ul className="space-y-3">
-                {quickLinks.map((link, index) => (
+                {quickLinks.map((link, _index) => (
                   <li key={link.name}>
                     <motion.a
                       href={link.href}
@@ -141,7 +141,7 @@ const Footer = () => {
             >
               <h4 className="text-lg font-semibold text-white mb-6">Servicios</h4>
               <ul className="space-y-3">
-                {services.map((service, index) => (
+                {services.map((service, _index) => (
                   <li key={service}>
                     <motion.span
                       className="text-gray-300 hover:text-primary-500 transition-colors duration-300"
@@ -171,7 +171,7 @@ const Footer = () => {
 
               {/* Social Links */}
               <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
+                {socialLinks.map((social, _index) => (
                   <motion.a
                     key={social.label}
                     href={social.href}

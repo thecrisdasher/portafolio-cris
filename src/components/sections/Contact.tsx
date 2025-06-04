@@ -132,7 +132,7 @@ const Contact = () => {
 
             {/* Contact Cards */}
             <div className="space-y-4">
-              {contactInfo.map((info, index) => (
+              {contactInfo.map((info, _index) => (
                 <motion.a
                   key={info.title}
                   href={info.link}

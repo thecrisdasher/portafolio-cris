@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState, useEffect, useCallback } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react'
 
@@ -52,13 +52,13 @@ const Testimonials = () => {
     }
   ]
 
-  const nextTestimonial = () => {
+  const nextTestimonial = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length)
-  }
+  }, [testimonials.length])
 
-  const prevTestimonial = () => {
+  const prevTestimonial = useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
-  }
+  }, [testimonials.length])
 
   useEffect(() => {
     const interval = setInterval(nextTestimonial, 5000)
@@ -231,7 +231,7 @@ const Testimonials = () => {
             { number: '50+', label: 'Clientes Satisfechos' },
             { number: '100%', label: 'Proyectos Completados' },
             { number: '5★', label: 'Calificación Promedio' }
-          ].map((stat, index) => (
+          ].map((stat, _index) => (
             <motion.div
               key={stat.label}
               variants={itemVariants}

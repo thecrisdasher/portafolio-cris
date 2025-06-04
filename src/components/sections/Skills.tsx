@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Code, Database, Palette, Server, Globe, Smartphone } from 'lucide-react'
+import { Code, Database, Server } from 'lucide-react'
 
 const Skills = () => {
   const ref = useRef(null)
@@ -113,7 +113,7 @@ const Skills = () => {
           animate={isInView ? "visible" : "hidden"}
           className="grid lg:grid-cols-3 gap-8 mb-16"
         >
-          {skillCategories.map((category, categoryIndex) => (
+          {skillCategories.map((category, _categoryIndex) => (
             <motion.div
               key={category.title}
               variants={itemVariants}
@@ -128,7 +128,7 @@ const Skills = () => {
               </div>
 
               <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
+                {category.skills.map((skill, _skillIndex) => (
                   <div key={skill.name}>
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-gray-300 font-medium">{skill.name}</span>
@@ -168,7 +168,7 @@ const Skills = () => {
             variants={containerVariants}
             className="flex flex-wrap justify-center gap-4"
           >
-            {tools.map((tool, index) => (
+            {tools.map((tool, _index) => (
               <motion.div
                 key={tool}
                 variants={itemVariants}
