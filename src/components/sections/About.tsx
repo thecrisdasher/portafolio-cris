@@ -4,7 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Download, Award, Users, Coffee } from 'lucide-react'
+import { Download, Award, Users, Coffee, Star, Code, Zap } from 'lucide-react'
 import Image from 'next/image'
 
 const About = () => {
@@ -12,8 +12,8 @@ const About = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const stats = [
-    { icon: Award, value: '3+', label: 'Años de Experiencia' },
-    { icon: Users, value: '50+', label: 'Proyectos Completados' },
+    { icon: Award, value: '2+', label: 'Años de Experiencia' },
+    { icon: Users, value: '10', label: 'Proyectos Completados' },
     { icon: Coffee, value: '1000+', label: 'Tazas de Café' },
   ]
 
@@ -41,8 +41,14 @@ const About = () => {
   }
 
   return (
-    <section id="about" className="section-padding bg-gray-800/50">
-      <div className="container-custom" ref={ref}>
+    <section id="about" className="section-padding bg-gray-800/50 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-10 overflow-hidden">
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-primary-500 rounded-full filter blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-secondary-500 rounded-full filter blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+      </div>
+      
+      <div className="container-custom relative z-10" ref={ref}>
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -58,11 +64,11 @@ const About = () => {
               {/* Main Image */}
               <motion.div
                 className="relative z-10"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
               >
                 <Image
-                  src="/Image/cristian-carabali-img.png"
+                  src="/Image/img1.jpg"
                   alt="Cristian Carabali - Desarrollador Full Stack"
                   width={1000}
                   height={1000}
@@ -75,21 +81,22 @@ const About = () => {
                 />
                 
                 {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-transparent to-transparent rounded-2xl"></div>
                 
                 {/* Floating elements */}
-                <div className="absolute top-4 right-4 w-20 h-20 bg-primary-500/20 rounded-full blur-xl"></div>
-                <div className="absolute bottom-8 left-4 w-16 h-16 bg-secondary-500/20 rounded-full blur-lg"></div>
+                <div className="absolute top-4 right-4 w-24 h-24 bg-primary-500/30 rounded-full blur-xl animate-pulse"></div>
+                <div className="absolute bottom-8 left-4 w-20 h-20 bg-secondary-500/30 rounded-full blur-lg" style={{ animationDelay: '1.5s' }}></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white/5 rounded-full blur-3xl"></div>
               </motion.div>
 
               {/* Animated border */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm"></div>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm animate-gradient-xy"></div>
             </div>
             
             {/* Floating Stats Card */}
             <motion.div
               variants={itemVariants}
-              className="absolute -bottom-6 -right-6 bg-gray-900/90 backdrop-blur-lg rounded-xl p-6 border border-primary-500/30 shadow-2xl"
+              className="absolute -bottom-6 -right-6 glass-effect rounded-xl p-6 border border-primary-500/30 shadow-2xl hover-glow"
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ duration: 0.3 }}
             >
@@ -104,7 +111,7 @@ const About = () => {
             {/* Floating Achievement Badge */}
             <motion.div
               variants={itemVariants}
-              className="absolute -top-4 -left-4 bg-secondary-500/90 backdrop-blur-sm rounded-full p-3 shadow-lg"
+              className="absolute -top-6 -left-6 bg-gradient-to-br from-secondary-500 to-primary-500 backdrop-blur-sm rounded-full p-4 shadow-lg"
               animate={{ 
                 rotate: [0, 5, -5, 0],
                 scale: [1, 1.1, 1]
@@ -115,13 +122,43 @@ const About = () => {
                 ease: "easeInOut"
               }}
             >
-              <Award className="w-6 h-6 text-white" />
+              <Award className="w-7 h-7 text-white" />
+            </motion.div>
+            
+            {/* Code Badge */}
+            <motion.div
+              variants={itemVariants}
+              className="absolute top-1/4 -right-4 bg-gradient-to-br from-primary-500 to-secondary-500/80 backdrop-blur-sm rounded-full p-3 shadow-lg"
+              animate={{ 
+                y: [0, -8, 0],
+                scale: [1, 1.05, 1]
+              }}
+              transition={{ 
+                duration: 3, 
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1
+              }}
+            >
+              <Code className="w-5 h-5 text-white" />
             </motion.div>
           </motion.div>
 
           {/* Content Section */}
           <motion.div variants={itemVariants} className="space-y-6">
             <div>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="inline-flex items-center space-x-2 bg-gray-700/50 rounded-full pl-2 pr-4 py-1 mb-4 border border-gray-600/50"
+              >
+                <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary-500/20">
+                  <Star className="w-4 h-4 text-primary-500" />
+                </span>
+                <span className="text-sm text-gray-300">Desarrollador Full Stack</span>
+              </motion.div>
+              
               <motion.h2
                 variants={itemVariants}
                 className="text-3xl md:text-4xl font-bold text-white mb-4"
@@ -130,7 +167,7 @@ const About = () => {
               </motion.h2>
               <motion.h3
                 variants={itemVariants}
-                className="text-xl text-secondary-500 mb-6"
+                className="text-xl text-secondary-500 mb-6 font-medium"
               >
                 ¡Que Más Parcero! Soy Cristian Carabali
               </motion.h3>
@@ -138,7 +175,7 @@ const About = () => {
 
             <motion.p
               variants={itemVariants}
-              className="text-gray-300 leading-relaxed text-lg"
+              className="text-gray-300 leading-relaxed text-lg glass-effect p-4 rounded-lg"
             >
               Soy un desarrollador web apasionado por la creación de soluciones digitales 
               para negocios y empresas. Con experiencia en tecnología en sistemas, 
@@ -156,8 +193,11 @@ const About = () => {
             </motion.p>
 
             {/* Skills Highlights */}
-            <motion.div variants={itemVariants} className="space-y-4">
-              <h4 className="text-lg font-semibold text-white">Especialidades:</h4>
+            <motion.div variants={itemVariants} className="space-y-4 glass-effect p-6 rounded-xl">
+              <h4 className="text-lg font-semibold text-white flex items-center">
+                <Zap className="w-5 h-5 text-primary-500 mr-2" />
+                Especialidades:
+              </h4>
               <div className="grid grid-cols-2 gap-4">
                 {[
                   'Desarrollo Frontend',
@@ -170,16 +210,16 @@ const About = () => {
                   <motion.div
                     key={skill}
                     variants={itemVariants}
-                    className="flex items-center space-x-2"
+                    className="flex items-center space-x-2 group"
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.2 }}
                   >
                     <motion.div 
-                      className="w-2 h-2 bg-primary-500 rounded-full"
+                      className="w-2 h-2 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full group-hover:w-3 group-hover:h-3 transition-all duration-300"
                       animate={{ scale: [1, 1.2, 1] }}
                       transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
                     ></motion.div>
-                    <span className="text-gray-300">{skill}</span>
+                    <span className="text-gray-300 group-hover:text-white transition-colors duration-300">{skill}</span>
                   </motion.div>
                 ))}
               </div>
@@ -188,10 +228,12 @@ const About = () => {
             {/* CTA Button */}
             <motion.div variants={itemVariants} className="pt-6">
               <motion.button 
-                className="btn-primary inline-flex items-center space-x-2 hover-glow"
+                className="btn-primary inline-flex items-center space-x-2 hover-glow relative overflow-hidden group"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
+                {/* Button shine effect */}
+                <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-20 group-hover:animate-shine"></div>
                 <Download size={20} />
                 <span>Descargar CV</span>
               </motion.button>
@@ -210,25 +252,32 @@ const About = () => {
             <motion.div
               key={stat.label}
               variants={itemVariants}
-              className="text-center glass-effect p-6 rounded-xl hover-glow group"
+              className="text-center glass-effect p-8 rounded-xl hover-glow group relative overflow-hidden"
               whileHover={{ y: -8, scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
+              {/* Background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-secondary-500/5 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+              
+              {/* Circles decoration */}
+              <div className="absolute top-0 right-0 w-20 h-20 bg-primary-500/10 rounded-full translate-x-1/2 -translate-y-1/2 filter blur-xl"></div>
+              <div className="absolute bottom-0 left-0 w-16 h-16 bg-secondary-500/10 rounded-full -translate-x-1/2 translate-y-1/2 filter blur-lg"></div>
+              
               <motion.div 
-                className="inline-flex items-center justify-center w-16 h-16 bg-primary-500/20 rounded-full mb-4 group-hover:bg-primary-500/30 transition-colors duration-300"
+                className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-500/30 to-secondary-500/30 rounded-full mb-4 group-hover:from-primary-500/50 group-hover:to-secondary-500/50 transition-all duration-300"
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.6 }}
               >
-                <stat.icon className="w-8 h-8 text-primary-500" />
+                <stat.icon className="w-8 h-8 text-white" />
               </motion.div>
               <motion.div 
-                className="text-3xl font-bold text-white mb-2"
+                className="text-3xl font-bold mb-2 bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent"
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
               >
                 {stat.value}
               </motion.div>
-              <div className="text-gray-300">{stat.label}</div>
+              <div className="text-gray-300 font-medium">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>

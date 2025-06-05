@@ -193,7 +193,7 @@ const Skills = () => {
             Experiencia Profesional
           </h3>
           <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
-            Con más de 3 años de experiencia en desarrollo web, he trabajado en proyectos 
+            Con más de 2 años de experiencia en desarrollo web, he trabajado en proyectos 
             que van desde sitios web corporativos hasta aplicaciones web complejas. 
             Mi experiencia incluye el desarrollo y consumo de APIs RESTful, optimización 
             de bases de datos y análisis de datos para soluciones empresariales.
