@@ -12,17 +12,28 @@ const Work = () => {
   const projects = [
     {
       id: 1,
-      title: 'Plataforma E-Commerce - Carrito De Compras Billares El Rey.',
-      category: 'web',
-      description: 'Plataforma de comercio electrónico completa con carrito de compras, redireccion a WhatsApp y gestión de inventario.',
-      image: '/Image/trabajo1.jpg',
-      technologies: ['Shopify', 'Liquid'],
+      title: 'Mellow Trader',
+      category: 'app',
+      description: 'Aplicación web para la empresa Mellow Trader, simulativa de trading de criptomonedas y mercado.',
+      image: '/Image/work4.jpg',
+      technologies: ['Vue.js', 'Laravel', 'MySQL'],
       liveUrl: '#',
       githubUrl: '#',
       featured: true
     },
     {
       id: 2,
+      title: 'Maestro Alaric',
+      category: 'web',
+      description: 'Landing Page para la empresa Maestro Alaric.',
+      image: '/Image/work3.jpg',
+      technologies: ['React', 'Next JS', 'Tailwind', 'TypeScript  '],
+      liveUrl: '#',
+      githubUrl: '#',
+      featured: true
+    },
+    {
+      id: 3,
       title: 'WorkWave - Sistema de Gestión de Practicas Laborales Para La Universidad Antonio José Camacho',
       category: 'web',
       description: 'Sistema de gestión de practicas laborales para la Universidad Antonio José Camacho, con sistema de login, registro, gestión de practicas, gestión de estudiantes, gestión de empresas, gestión de profesores, gestión de administradores.',
@@ -30,30 +41,19 @@ const Work = () => {
       technologies: ['Laravel', 'PHP', 'MySQL', 'JavaScript', 'CSS'],
       liveUrl: '#',
       githubUrl: '#',
-      featured: true
-    },
-    {
-      id: 3,
-      title: 'Maestro Alaric',
-      category: 'web',
-      description: 'Landing Page para la empresa Maestro Alaric.',
-      image: '/Image/trabajo3.jpg',
-      technologies: ['React', 'Next JS', 'Tailwind', 'TypeScript  '],
-      liveUrl: '#',
-      githubUrl: '#',
       featured: false
     },
     {
       id: 4,
-      title: 'Restaurant Website',
+      title: 'Plataforma E-Commerce - Carrito De Compras Billares El Rey.',
       category: 'web',
-      description: 'Sitio web para restaurante con sistema de reservas y menú digital.',
-      image: '/Image/work4.jpg',
-      technologies: ['Vue.js', 'Laravel', 'MySQL'],
+      description: 'Plataforma de comercio electrónico completa con carrito de compras, redireccion a WhatsApp y gestión de inventario.',
+      image: '/Image/trabajo1.jpg',
+      technologies: ['Shopify', 'Liquid'],
       liveUrl: '#',
       githubUrl: '#',
       featured: false
-    }
+    },
   ]
 
   const categories = [

@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Palette, Code, Smartphone, Database, Globe, Zap } from 'lucide-react'
+import { Palette, Code, Smartphone, Database, Globe, Zap, Target } from 'lucide-react'
 
 const Services = () => {
   const ref = useRef(null)
@@ -26,6 +26,12 @@ const Services = () => {
       title: 'Desarrollo Backend',
       description: 'Creación de APIs robustas y escalables, gestión de bases de datos y arquitectura de servidores para aplicaciones web complejas.',
       features: ['APIs RESTful', 'Base de Datos', 'Autenticación', 'Optimización']
+    },
+    {
+      icon: Target,
+      title: 'Marketing Digital',
+      description: 'Maximiza tu visibilidad online y genera clientes potenciales con estrategias de publicidad digital efectivas adaptadas a tus objetivos y presupuesto.',
+      features: ['Google Ads', 'Facebook Ads', 'Estrategias SEO/SEM', 'Análisis de Conversión']
     },
     {
       icon: Smartphone,
