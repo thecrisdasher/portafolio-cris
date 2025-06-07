@@ -12,7 +12,7 @@ const Footer = () => {
     { icon: Github, href: 'https://github.com/thecrisdasher', label: 'GitHub' },
     { icon: Instagram, href: 'https://www.instagram.com/thecrisxo/', label: 'Instagram' },
     { icon: Twitter, href: 'https://x.com/cristianda23', label: 'Twitter' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/cristian-carabali/', label: 'LinkedIn' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/cristian-david-carabali/', label: 'LinkedIn' },
   ]
 
   const quickLinks = [
