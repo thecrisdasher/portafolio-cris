@@ -19,14 +19,14 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'cristian@example.com',
-      link: 'mailto:cristian@example.com'
+      value: 'mejorllamaacris@gmail.com',
+      link: 'mailto:mejorllamaacris@gmail.com'
     },
     {
       icon: Phone,
       title: 'Teléfono',
-      value: '+57 300 123 4567',
-      link: 'tel:+573001234567'
+      value: '+57 3181545958',
+      link: 'tel:+573181545958'
     },
     {
       icon: MapPin,
