@@ -16,9 +16,9 @@ const Work = () => {
       category: 'app',
       description: 'Aplicación web para la empresa Mellow Trader, simulativa de trading de criptomonedas y mercado.',
       image: '/Image/work4.jpg',
-      technologies: ['Vue.js', 'Laravel', 'MySQL'],
-      liveUrl: '#',
-      githubUrl: '#',
+      technologies: ['Next JS', 'React', 'Tailwind', 'TypeScript', 'Shadcn UI', 'PostgreSQL'],
+      liveUrl: 'https://bitpulse-frontend.fly.dev/',
+      githubUrl: 'https://github.com/thecrisdasher/bitpulse-version-frontend',
       featured: true
     },
     {
@@ -28,23 +28,34 @@ const Work = () => {
       description: 'Landing Page para la empresa Maestro Alaric.',
       image: '/Image/work3.jpg',
       technologies: ['React', 'Next JS', 'Tailwind', 'TypeScript  '],
-      liveUrl: '#',
-      githubUrl: '#',
+      liveUrl: 'https://www.maestroalaric.com/',
+      githubUrl: 'https://github.com/thecrisdasher/amarres-web',
       featured: true
     },
     {
       id: 3,
+      title: 'Tarot Sol y Luna',
+      category: 'web',
+      description: 'Landing Page para la empresa Maestro Alaric.',
+      image: '/Image/tarot-sol-work.jpg',
+      technologies: ['React', 'Next JS', 'Tailwind', 'TypeScript  '],
+      liveUrl: 'https://tarotlunaysol.com/',
+      githubUrl: 'https://github.com/thecrisdasher/tarot-web',
+      featured: false
+    },
+    {
+      id: 4,
       title: 'WorkWave - Sistema de Gestión de Practicas Laborales Para La Universidad Antonio José Camacho',
       category: 'app',
       description: 'Sistema de gestión de practicas laborales para la Universidad Antonio José Camacho, con sistema de login, registro, gestión de practicas, gestión de estudiantes, gestión de empresas, gestión de profesores, gestión de administradores.',
       image: '/Image/trabajo2.jpg',
       technologies: ['Laravel', 'PHP', 'MySQL', 'JavaScript', 'CSS'],
       liveUrl: '#',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/thecrisdasher/WorkWaveSistemaDeGestionDePracticasLaborales',
       featured: false
     },
     {
-      id: 4,
+      id: 5,
       title: 'Plataforma E-Commerce - Carrito De Compras Billares El Rey.',
       category: 'web',
       description: 'Plataforma de comercio electrónico completa con carrito de compras, redireccion a WhatsApp y gestión de inventario.',
