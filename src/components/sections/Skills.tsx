@@ -3,7 +3,7 @@
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Code, Database, Server } from 'lucide-react'
-import Link from 'next/link'
+
 
 const scrollToSection = (id: string) => {
   const element = document.querySelector(id);
