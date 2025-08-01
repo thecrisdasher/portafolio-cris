@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     url: 'https://crisdasher-portfolio.vercel.app/',
     images: [
       {
-        url: '/Image/cristian-carabali-img.png',
+        url: '/Image/mejorllamaacrislogo.png',
         width: 1200,
         height: 1200,
         alt: 'Cristian Carabali - Desarrollador Full Stack',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Cristian Carabali - Desarrollador Full Stack',
     description: 'Portafolio personal de Cristian Carabali',
-    images: ['/Image/cristian-carabali-img.png'],
+    images: ['/Image/mejorllamaacrislogo.png'],
     creator: '@cristianda23',
   },
   robots: {
@@ -63,8 +63,8 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${poppins.variable} scroll-smooth`}>
       <head>
-        <link rel="icon" href="/Image/cristian-carabali-img.png" />
-        <link rel="apple-touch-icon" href="/Image/cristian-carabali-img.png" />
+        <link rel="icon" href="/Image/mejorllamaacrislogo.png" />
+        <link rel="apple-touch-icon" href="/Image/mejorllamaacrislogo.png" />
       </head>
       <body className={`${poppins.className} bg-gray-900 text-white overflow-x-hidden`}>
         <Providers>
