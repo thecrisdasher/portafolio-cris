@@ -23,8 +23,8 @@ const Testimonials = () => {
     {
       id: 2,
       name: 'Carlos Rodríguez',
-      position: 'Director de Marketing',
-      company: 'Innovate Corp',
+      position: 'CEO',
+      company: 'Mello Trader',
       image: '/api/placeholder/80/80',
       rating: 5,
       text: 'Trabajar con Cristian fue una experiencia increíble. No solo entregó un producto de alta calidad, sino que también nos guió durante todo el proceso con profesionalismo y creatividad.',

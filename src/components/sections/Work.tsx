@@ -36,7 +36,7 @@ const Work = () => {
       id: 3,
       title: 'Tarot Sol y Luna',
       category: 'web',
-      description: 'Landing Page para la empresa Maestro Alaric.',
+      description: 'Landing Page para la empresa Tarot Sol y Luna.',
       image: '/Image/tarot-sol-work.jpg',
       technologies: ['React', 'Next JS', 'Tailwind', 'TypeScript  '],
       liveUrl: 'https://tarotlunaysol.com/',

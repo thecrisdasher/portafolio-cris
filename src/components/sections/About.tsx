@@ -227,6 +227,7 @@ const About = () => {
 
             {/* CTA Button */}
             <motion.div variants={itemVariants} className="pt-6">
+             <a href="/DESARROLLADORFULLSTACKTECNOLOGOENSISTEMAS-CV CRISTIAN CARABALI.pdf" download>
               <motion.button 
                 className="btn-primary inline-flex items-center space-x-2 hover-glow relative overflow-hidden group"
                 whileHover={{ scale: 1.05 }}
@@ -237,6 +238,7 @@ const About = () => {
                 <Download size={20} />
                 <span>Descargar CV</span>
               </motion.button>
+              </a>
             </motion.div>
           </motion.div>
         </motion.div>

@@ -3,6 +3,14 @@
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Code, Database, Server } from 'lucide-react'
+import Link from 'next/link'
+
+const scrollToSection = (id: string) => {
+  const element = document.querySelector(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
 const Skills = () => {
   const ref = useRef(null)
@@ -199,11 +207,12 @@ const Skills = () => {
             de bases de datos y análisis de datos para soluciones empresariales.
           </p>
           
-          <div className="mt-6">
-            <button className="btn-secondary hover-glow">
-              Ver Proyectos
-            </button>
-          </div>
+            <div className="mt-6">
+              <button className="btn-secondary hover-glow"
+              onClick={() => scrollToSection('#work')}>
+                Ver Proyectos
+              </button>
+            </div>
         </motion.div>
       </div>
     </section>
