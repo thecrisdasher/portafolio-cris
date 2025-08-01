@@ -14,6 +14,11 @@ const Contact = () => {
     message: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [notification, setNotification] = useState<{
+    show: boolean;
+    message: string;
+    type: 'success' | 'error';
+  }>({ show: false, message: '', type: 'success' })
 
   const contactInfo = [
     {
@@ -44,24 +49,44 @@ const Contact = () => {
     }))
   }
 
+  const showNotification = (message: string, type: 'success' | 'error') => {
+    setNotification({ show: true, message, type })
+    setTimeout(() => {
+      setNotification({ show: false, message: '', type: 'success' })
+    }, 5000)
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    })
-    setIsSubmitting(false)
-    
-    // Show success message (you can implement a toast notification here)
-    alert('¡Mensaje enviado exitosamente!')
+    try {
+      const response = await fetch('https://formspree.io/f/mzzvvnqq', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        // Reset form on success
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        })
+        showNotification('¡Mensaje enviado exitosamente! Te contactaré pronto.', 'success')
+      } else {
+        throw new Error('Error al enviar el mensaje')
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      showNotification('Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.', 'error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const containerVariants = {
@@ -89,6 +114,47 @@ const Contact = () => {
 
   return (
     <section id="contact" className="section-padding bg-gray-900 relative overflow-hidden">
+      {/* Notification */}
+      {notification.show && (
+        <motion.div
+          initial={{ opacity: 0, y: -100, scale: 0.8 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -100, scale: 0.8 }}
+          className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 max-w-md w-full mx-4"
+        >
+          <div className={`glass-effect p-4 rounded-xl border-l-4 ${
+            notification.type === 'success' 
+              ? 'border-green-500 bg-green-500/10' 
+              : 'border-red-500 bg-red-500/10'
+          }`}>
+            <div className="flex items-center space-x-3">
+              <div className={`w-6 h-6 rounded-full flex items-center justify-center ${
+                notification.type === 'success' ? 'bg-green-500' : 'bg-red-500'
+              }`}>
+                {notification.type === 'success' ? (
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                ) : (
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                )}
+              </div>
+              <p className="text-white font-medium flex-1">{notification.message}</p>
+              <button
+                onClick={() => setNotification({ show: false, message: '', type: 'success' })}
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </motion.div>
+      )}
+
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-primary-500 rounded-full filter blur-3xl animate-float"></div>
@@ -283,4 +349,4 @@ const Contact = () => {
   )
 }
 
-export default Contact 
+export default Contact
