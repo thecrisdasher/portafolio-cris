@@ -65,12 +65,38 @@ const Work = () => {
       githubUrl: '#',
       featured: false
     },
+    // Proyectos en desarrollo
+    {
+      id: 6,
+      title: 'Sistema Multinivel Grupo Visionarios Mejora Personal',
+      category: 'dev',
+      description: 'Plataforma completa de sistema multinivel para la empresa Grupo Visionarios, con dashboard avanzado, reportes en tiempo real y análisis de datos.',
+      image: '/Image/grupovisionarios-work.jpg',
+      technologies: ['React', 'Next.js', 'PostgreSQL', 'TypeScript', 'GraphQL'],
+      liveUrl: '#',
+      githubUrl: '#',
+      featured: false,
+      inDevelopment: true
+    },
+    {
+      id: 7,
+      title: 'Transporte Nacional G&G',
+      category: 'dev',
+      description: 'Landing Page para la empresa Transporte Nacional G&G.',
+      image: '/Image/transportegeneral-work1.png',
+      technologies: ['React JS', 'Next JS', 'Parallax', 'Tailwind CSS', 'TypeScript', 'Shadcn UI', 'Zod', 'Framer Motion'],
+      liveUrl: '#',
+      githubUrl: '#',
+      featured: false,
+      inDevelopment: true
+    },
   ]
 
   const categories = [
     { id: 'all', label: 'Todos' },
     { id: 'web', label: 'Sitios Web' },
     { id: 'app', label: 'Aplicaciones' },
+    { id: 'dev', label: 'En Desarrollo' },
     { id: 'design', label: 'Diseño' }
   ]
 
@@ -170,28 +196,70 @@ const Work = () => {
                 
                 {/* Overlay Actions */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="flex space-x-4">
-                    <motion.a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-primary-500 rounded-full text-white hover:bg-primary-600 transition-colors duration-300"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
+                  {project.inDevelopment ? (
+                    // "Próximamente" para proyectos en desarrollo
+                    <motion.div
+                      initial={{ scale: 0.9, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      className="text-center"
                     >
-                      <ExternalLink size={20} />
-                    </motion.a>
-                    <motion.a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-gray-700 rounded-full text-white hover:bg-gray-600 transition-colors duration-300"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <Github size={20} />
-                    </motion.a>
-                  </div>
+                      <motion.div
+                        animate={{ 
+                          scale: [1, 1.2, 1],
+                          opacity: [0.8, 1, 0.8]
+                        }}
+                        transition={{ 
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                        className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full flex items-center justify-center shadow-2xl"
+                      >
+                        <div className="w-10 h-10 bg-white/90 rounded-full"></div>
+                      </motion.div>
+                      <motion.h4 
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.1, duration: 0.4 }}
+                        className="text-3xl font-bold text-white mb-2 drop-shadow-lg"
+                      >
+                        <span className="gradient-text">Próximamente!</span>
+                      </motion.h4>
+                      <motion.p 
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.2, duration: 0.4 }}
+                        className="text-gray-200 text-lg font-medium drop-shadow-md"
+                      >
+                        En desarrollo
+                      </motion.p>
+                    </motion.div>
+                  ) : (
+                    // Botones normales para proyectos completados
+                    <div className="flex space-x-4">
+                      <motion.a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 bg-primary-500 rounded-full text-white hover:bg-primary-600 transition-colors duration-300"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <ExternalLink size={20} />
+                      </motion.a>
+                      <motion.a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 bg-gray-700 rounded-full text-white hover:bg-gray-600 transition-colors duration-300"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <Github size={20} />
+                      </motion.a>
+                    </div>
+                  )}
                 </div>
 
                 {/* Featured Badge */}
@@ -259,4 +327,4 @@ const Work = () => {
   )
 }
 
-export default Work 
+export default Work
