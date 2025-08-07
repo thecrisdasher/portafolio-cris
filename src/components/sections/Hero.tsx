@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 const Hero = () => {
   const [currentRole, setCurrentRole] = useState(0)
-  const roles = ['Desarrollador Web', 'Diseñador Web', 'Programador Full Stack']
+  const roles = ['Desarrollador Web', 'Diseñador Web', 'Programador Full Stack', 'Tecnólogo en Sistemas e Información']
 
   useEffect(() => {
     const interval = setInterval(() => {
