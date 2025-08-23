@@ -15,7 +15,7 @@ const Work = () => {
       title: 'Mello Trader',
       category: 'app',
       description: 'Plataforma fintech educativa completa con trading simulado en tiempo real, integración Binance API, comunicación instantánea via Socket.IO, sistema CRM académico y dashboard administrativo avanzado con autenticación 2FA.',
-      image: '/Image/work4.jpg',
+      image: '/Image/mellotrader-work.png',
       technologies: ['Next JS', 'React', 'Socket.IO', 'TypeScript', 'Binance API', 'PostgreSQL', 'Prisma', 'Shadcn UI'],
       liveUrl: 'https://bitpulse-frontend.fly.dev/',
       githubUrl: 'https://github.com/thecrisdasher/bitpulse-version-frontend',
