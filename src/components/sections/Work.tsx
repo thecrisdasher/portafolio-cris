@@ -12,11 +12,11 @@ const Work = () => {
   const projects = [
     {
       id: 1,
-      title: 'Mellow Trader',
+      title: 'Mello Trader',
       category: 'app',
-      description: 'Aplicación web para la empresa Mellow Trader, simulativa de trading de criptomonedas y mercado.',
+      description: 'Plataforma fintech educativa completa con trading simulado en tiempo real, integración Binance API, comunicación instantánea via Socket.IO, sistema CRM académico y dashboard administrativo avanzado con autenticación 2FA.',
       image: '/Image/work4.jpg',
-      technologies: ['Next JS', 'React', 'Tailwind', 'TypeScript', 'Shadcn UI', 'PostgreSQL'],
+      technologies: ['Next JS', 'React', 'Socket.IO', 'TypeScript', 'Binance API', 'PostgreSQL', 'Prisma', 'Shadcn UI'],
       liveUrl: 'https://bitpulse-frontend.fly.dev/',
       githubUrl: 'https://github.com/thecrisdasher/bitpulse-version-frontend',
       featured: true
@@ -68,11 +68,11 @@ const Work = () => {
     // Proyectos en desarrollo
     {
       id: 6,
-      title: 'Sistema Multinivel Grupo Visionarios Mejora Personal',
+      title: 'Grupo Visionarios - Sistema Multinivel Avanzado con Integración Zoom y Analytics en Tiempo Real',
       category: 'dev',
-      description: 'Plataforma completa de sistema multinivel para la empresa Grupo Visionarios, con dashboard avanzado, reportes en tiempo real y análisis de datos.',
+      description: 'Plataforma full-stack desarrollada en Next.js 14 + TypeScript que implementa un sofisticado sistema de afiliados multinivel con estructura 3x3 y 12 niveles escalables. Integra sistema de capacitación multimedia, videollamadas automatizadas vía Zoom API, procesamiento de pagos dual (Stripe/PayU), analytics geolocalizado en tiempo real, y dashboard interactivo con visualización de árbol de referidos. Arquitectura enterprise con Prisma ORM, PostgreSQL, NextAuth.js y UI responsiva con Tailwind CSS + animaciones Framer Motion.',
       image: '/Image/grupovisionarios-work.jpg',
-      technologies: ['React', 'Next.js', 'PostgreSQL', 'TypeScript', 'GraphQL'],
+      technologies: ['React', 'Next.js', 'PostgreSQL', 'TypeScript', 'GraphQL', 'Prisma', 'NextAuth.js', 'Tailwind CSS', 'Framer Motion','Zoom API', 'Stripe'],
       liveUrl: '#',
       githubUrl: '#',
       featured: false,

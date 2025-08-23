@@ -56,6 +56,19 @@ const Contact = () => {
     }, 5000)
   }
 
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '+573053749314'
+    const message = encodeURIComponent('¡Hola! Me gustaría hablar contigo sobre un proyecto. ¿Podrías ayudarme?')
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`
+    window.open(whatsappUrl, '_blank')
+  }
+
+  const handleScheduleMeeting = () => {
+    // Puedes cambiar esta URL por tu enlace de Calendly, Google Calendar, o cualquier otra plataforma
+    const calendarUrl = 'https://calendly.com/tu-usuario/30min' // Reemplaza con tu enlace real
+    window.open(calendarUrl, '_blank')
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
@@ -222,6 +235,7 @@ const Contact = () => {
               <h4 className="text-lg font-semibold text-white">Acciones Rápidas</h4>
               <div className="flex flex-col sm:flex-row gap-4">
                 <motion.button
+                  onClick={handleWhatsAppClick}
                   className="btn-primary inline-flex items-center space-x-2 hover-glow"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -230,6 +244,7 @@ const Contact = () => {
                   <span>WhatsApp</span>
                 </motion.button>
                 <motion.button
+                  onClick={handleScheduleMeeting}
                   className="btn-secondary inline-flex items-center space-x-2 hover-glow"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
