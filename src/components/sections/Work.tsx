@@ -90,6 +90,18 @@ const Work = () => {
       featured: false,
       inDevelopment: true
     },
+    {
+      id: 8,
+      title: 'Alivio Vital Home Care',
+      category: 'dev',
+      description: 'Landing Page para la empresa Alivio Vital Home Care.',
+      image: '/Image/alivio-vital-work.png',
+      technologies: ["Next JS", "React JS", "TypeScript", "Tailwind CSS", "Shadcn/UI", "Radix UI", "Framer Motion", "React Hook Form", "Zod", "Lucide Icons"],
+      liveUrl: '#',
+      githubUrl: '#',
+      featured: false,
+      inDevelopment: true
+    },
   ]
 
   const categories = [
