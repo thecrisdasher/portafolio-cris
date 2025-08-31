@@ -150,11 +150,11 @@ const Work = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Mi <span className="gradient-text">Trabajo</span>
+            Mi <span className="gradient-text">Trabajo Con Clientes</span>
           </h2>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Una selección de mis proyectos más recientes que demuestran 
-            mi experiencia en desarrollo web y diseño de interfaces.
+            Una selección de mis proyectos más recientes con clientes reales que demuestran 
+            mi experiencia en desarrollo web y diseño de interfaces en el mundo real.
           </p>
         </motion.div>
 
