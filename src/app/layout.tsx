@@ -11,16 +11,22 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://crisdasher-portfolio.vercel.app'),
-  title: 'Cristian Carabali - Desarrollador Full Stack',
+  metadataBase: new URL('https://portafolio-mejorllamaacris.vercel.app'),
+  title: 'Mejor Llama A Cris - Desarrollador Full Stack',
   description: 'Portafolio personal de Cristian Carabali, desarrollador web especializado en React, Next.js, Python y tecnologías modernas.',
   keywords: ['desarrollador web', 'full stack', 'react', 'next.js', 'python', 'javascript'],
   authors: [{ name: 'Cristian Carabali' }],
+  // Favicons e íconos para diferentes dispositivos
+  icons: {
+    icon: [{ url: '/Image/mejorllamaacrislogo.png' }],
+    shortcut: ['/Image/mejorllamaacrislogo.png'],
+    apple: [{ url: '/Image/mejorllamaacrislogo.png' }],
+  },
   openGraph: {
     title: 'Cristian Carabali - Desarrollador Full Stack',
     description: 'Portafolio personal de Cristian Carabali',
     type: 'website',
-    url: 'https://crisdasher-portfolio.vercel.app/',
+    url: 'https://portafolio-mejorllamaacris.vercel.app/',
     images: [
       {
         url: '/Image/mejorllamaacrislogo.png',
@@ -73,4 +79,4 @@ export default function RootLayout({
       </body>
     </html>
   )
-} 
+}
