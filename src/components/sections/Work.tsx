@@ -153,7 +153,7 @@ const Work = () => {
             Mi <span className="gradient-text">Trabajo Con Clientes</span>
           </h2>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Una selección de mis proyectos más recientes con clientes reales que demuestran 
+            Una selección de mis proyectos más recientes con clientes que demuestran 
             mi experiencia en desarrollo web y diseño de interfaces en el mundo real.
           </p>
         </motion.div>
