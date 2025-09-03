@@ -36,7 +36,7 @@ const Services = () => {
     {
       icon: Smartphone,
       title: 'Aplicaciones Web',
-      description: 'No solo me dedico a hacer sitios web, también creo aplicaciones web con tecnologías como Laravel, Python y Django con funcionalidades avanzadas.',
+      description: 'No solo me dedico a hacer sitios web, también creo aplicaciones web con tecnologías como Next JS, React, TypeScript y Django con funcionalidades avanzadas.',
       features: ['PWA', 'SPA', 'Funcionalidades Avanzadas', 'Escalabilidad']
     },
     {
