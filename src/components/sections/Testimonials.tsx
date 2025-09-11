@@ -228,7 +228,7 @@ const Testimonials = () => {
           className="grid md:grid-cols-3 gap-8 mt-16"
         >
           {[
-            { number: '50+', label: 'Clientes Satisfechos' },
+            { number: '10+', label: 'Clientes Satisfechos' },
             { number: '100%', label: 'Proyectos Completados' },
             { number: '5★', label: 'Calificación Promedio' }
           ].map((stat, _index) => (
