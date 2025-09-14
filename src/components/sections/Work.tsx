@@ -54,17 +54,6 @@ const Work = () => {
       githubUrl: 'https://github.com/thecrisdasher/WorkWaveSistemaDeGestionDePracticasLaborales',
       featured: false
     },
-    {
-      id: 5,
-      title: 'Plataforma E-Commerce - Carrito De Compras Billares El Rey.',
-      category: 'web',
-      description: 'Plataforma de comercio electrónico completa con carrito de compras, redireccion a WhatsApp y gestión de inventario.',
-      image: '/Image/trabajo1.jpg',
-      technologies: ['Shopify', 'Liquid'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false
-    },
     // Proyectos en desarrollo
     {
       id: 6,
