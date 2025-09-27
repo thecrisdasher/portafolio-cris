@@ -12,7 +12,7 @@ const Work = () => {
   const projects = [
     {
       id: 1,
-      title: 'Mello Trader',
+      title: 'Mello Trader | Plataforma De Trading',
       category: 'app',
       description: 'Plataforma fintech educativa completa con trading simulado en tiempo real, integración Binance API, comunicación instantánea via Socket.IO, sistema CRM académico y dashboard administrativo avanzado con autenticación 2FA.',
       image: '/Image/mellotrader-work.png',
@@ -21,16 +21,17 @@ const Work = () => {
       githubUrl: 'https://github.com/thecrisdasher/bitpulse-version-frontend',
       featured: true
     },
-    {
+  {
       id: 2,
-      title: 'Maestro Alaric',
+      title: 'Lazos De Cuidado | Home Care',
       category: 'web',
-      description: 'Landing Page para la empresa Maestro Alaric.',
-      image: '/Image/work3.jpg',
-      technologies: ['React', 'Next JS', 'Tailwind', 'TypeScript  '],
-      liveUrl: 'https://www.maestroalaric.com/',
-      githubUrl: 'https://github.com/thecrisdasher/amarres-web',
-      featured: true
+      description: 'Web corporativa integral para la empresa Lazos De Cuidado Home Care constituida logalmente en la ciudad de Cali, diseñada con atención al detalle y enfocada en ofrecer una experiencia de usuario profesional y confiable. Implementada con Next.js, React y Tailwind CSS, con componentes interactivos, animaciones suaves y optimización para rendimiento y accesibilidad.',
+      image: '/Image/alivio-vital-work.png',
+      technologies: ["Next JS", "React JS", "TypeScript", "Tailwind CSS", "Shadcn/UI", "Radix UI", "Framer Motion", "React Hook Form", "Zod", "Lucide Icons"],
+      liveUrl: 'https://lazosdecuidado.com',
+      githubUrl: 'https://github.com/thecrisdasher/sutil-home',
+      featured: true,
+      inDevelopment: false
     },
     {
       id: 3,
@@ -43,9 +44,20 @@ const Work = () => {
       githubUrl: 'https://github.com/thecrisdasher/tarot-web',
       featured: false
     },
-    {
+      {
       id: 4,
-      title: 'WorkWave - Sistema de Gestión de Practicas Laborales Para La Universidad Antonio José Camacho',
+      title: 'Maestro Alaric',
+      category: 'web',
+      description: 'Landing Page para la empresa Maestro Alaric.',
+      image: '/Image/work3.jpg',
+      technologies: ['React', 'Next JS', 'Tailwind', 'TypeScript  '],
+      liveUrl: 'https://www.maestroalaric.com/',
+      githubUrl: 'https://github.com/thecrisdasher/amarres-web',
+      featured: false
+    },
+    {
+      id: 5,
+      title: 'WorkWave |Sistema de Gestión de Practicas Laborales Para La Universidad Antonio José Camacho',
       category: 'app',
       description: 'Sistema de gestión de practicas laborales para la Universidad Antonio José Camacho, con sistema de login, registro, gestión de practicas, gestión de estudiantes, gestión de empresas, gestión de profesores, gestión de administradores.',
       image: '/Image/trabajo2.jpg',
@@ -57,7 +69,7 @@ const Work = () => {
     // Proyectos en desarrollo
     {
       id: 6,
-      title: 'Grupo Visionarios - Sistema Multinivel Avanzado con Integración Zoom y Analytics en Tiempo Real',
+      title: 'Grupo Visionarios | Sistema Multinivel Avanzado con Integración Zoom y Analytics en Tiempo Real',
       category: 'dev',
       description: 'Plataforma full-stack desarrollada en Next.js 14 + TypeScript que implementa un sofisticado sistema de afiliados multinivel con estructura 3x3 y 12 niveles escalables. Integra sistema de capacitación multimedia, videollamadas automatizadas vía Zoom API, procesamiento de pagos dual (Stripe/PayU), analytics geolocalizado en tiempo real, y dashboard interactivo con visualización de árbol de referidos. Arquitectura enterprise con Prisma ORM, PostgreSQL, NextAuth.js y UI responsiva con Tailwind CSS + animaciones Framer Motion.',
       image: '/Image/grupovisionarios-work.jpg',
@@ -74,18 +86,6 @@ const Work = () => {
       description: 'Landing Page para la empresa Transporte Nacional G&G.',
       image: '/Image/transportegeneral-work1.png',
       technologies: ['React JS', 'Next JS', 'Parallax', 'Tailwind CSS', 'TypeScript', 'Shadcn UI', 'Zod', 'Framer Motion'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false,
-      inDevelopment: true
-    },
-    {
-      id: 8,
-      title: 'Alivio Vital Home Care',
-      category: 'dev',
-      description: 'Landing Page para la empresa Alivio Vital Home Care.',
-      image: '/Image/alivio-vital-work.png',
-      technologies: ["Next JS", "React JS", "TypeScript", "Tailwind CSS", "Shadcn/UI", "Radix UI", "Framer Motion", "React Hook Form", "Zod", "Lucide Icons"],
       liveUrl: '#',
       githubUrl: '#',
       featured: false,
