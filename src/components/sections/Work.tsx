@@ -21,7 +21,7 @@ const Work = () => {
       githubUrl: 'https://github.com/thecrisdasher/bitpulse-version-frontend',
       featured: true
     },
-  {
+    {
       id: 2,
       title: 'Lazos De Cuidado | Home Care',
       category: 'web',
@@ -44,7 +44,7 @@ const Work = () => {
       githubUrl: 'https://github.com/thecrisdasher/tarot-web',
       featured: false
     },
-      {
+    {
       id: 4,
       title: 'Maestro Alaric',
       category: 'web',
@@ -104,6 +104,14 @@ const Work = () => {
   const filteredProjects = filter === 'all' 
     ? projects 
     : projects.filter(project => project.category === filter)
+
+  // Función para abrir WhatsApp
+  const openWhatsApp = () => {
+    const phoneNumber = '573053749314' // Número en formato internacional sin + ni espacios
+    const message = '¡Hola Cris! Me interesa conocer más sobre tus servicios de desarrollo web. ¿Podrías contarme más detalles?'
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+    window.open(url, '_blank')
+  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -317,7 +325,10 @@ const Work = () => {
               <button className="btn-primary hover-glow">
                 Ver Más Proyectos
               </button>
-              <button className="btn-secondary hover-glow">
+              <button 
+                onClick={openWhatsApp}
+                className="btn-secondary hover-glow"
+              >
                 Contactar
               </button>
             </div>
