@@ -57,7 +57,7 @@ const Work = () => {
     },
     {
       id: 5,
-      title: 'WorkWave |Sistema de Gestión de Practicas Laborales Para La Universidad Antonio José Camacho',
+      title: 'WorkWave | Sistema de Gestión de Practicas Laborales Para La Universidad Antonio José Camacho',
       category: 'app',
       description: 'Sistema de gestión de practicas laborales para la Universidad Antonio José Camacho, con sistema de login, registro, gestión de practicas, gestión de estudiantes, gestión de empresas, gestión de profesores, gestión de administradores.',
       image: '/Image/trabajo2.jpg',
