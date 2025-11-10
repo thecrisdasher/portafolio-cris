@@ -212,7 +212,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="text-gray-400 text-sm text-center md:text-left"
             >
-              © {currentYear} Cristian Carabali. Hecho con{' '}
+              © {currentYear} Mejor Llama A Cris! Hecho con{' '}
               <Heart className="inline w-4 h-4 text-red-500 mx-1" />
               en Colombia
             </motion.p>

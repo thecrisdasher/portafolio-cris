@@ -31,9 +31,9 @@ const Skills = () => {
       icon: Server,
       title: 'Backend',
       skills: [
-        { name: 'Python/Django', level: 90 },
+        { name: 'Node.js', level: 90 },
         { name: 'PHP/Laravel', level: 85 },
-        { name: 'Node.js', level: 80 },
+        { name: 'Python/Django', level: 80 },
         { name: 'Java/SpringBoot', level: 75 },
       ]
     },
