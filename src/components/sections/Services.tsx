@@ -90,7 +90,7 @@ const Services = () => {
             Mis <span className="gradient-text">Servicios</span>
           </h2>
           <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            Ofrezco desarrollo de sitios web corporativos y tiendas en línea con diseños 
+            Ofrezco desarrollo de sitios web corporativos y aplicaciones web con diseños 
             atractivos y funcionales, optimización de velocidad y seguridad para un 
             rendimiento eficiente, integración con bases de datos y sistemas empresariales.
           </p>
